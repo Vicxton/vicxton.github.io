@@ -1,37 +1,190 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Vicxton — Portfolio</title>
-  <meta name="description" content="Vicxton — developer portfolio. Projects, contact, and code samples.">
-  <link rel="canonical" href="https://Vicxton.github.io/">
+  <title>VicPortfolio — Developer Portfolio</title>
+  <meta name="description" content="VicPortfolio — developer portfolio showcasing web projects, code samples, and contact information.">
+  <link rel="canonical" href="https://vicportfolio.github.io/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Vicxton","url":"https://Vicxton.github.io","sameAs":[]}
+  {"@context":"https://schema.org","@type":"Person","name":"VicPortfolio","url":"https://vicportfolio.github.io","sameAs":["https://github.com/vicportfolio"]}
   </script>
-</head>
-  <meta charset="utf-8">
-  <title>Vicxton — Portfolio</title>
-  <style>body{font-family:Arial,Helvetica,sans-serif;max-width:800px;margin:40px auto;padding:0 20px}</style>
-<head>
-  <meta charset="utf-8">
-  <title>Vicxton — Portfolio</title>
-  <meta name="description" content="Vicxton — developer portfolio. Projects, contact, and code samples.">
-  <link rel="canonical" href="https://Vicxton.github.io/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Vicxton","url":"https://Vicxton.github.io","sameAs":[]}
-  </script>
+  <style>
+    :root{
+      --bg:#2e2e2e;
+      --card:#3a3a3a;
+      --muted:#cfcfcf;
+      --accent:#28a745;
+      --white:#ffffff;
+      --radius:10px;
+    }
+
+    /* Page layout */
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100%;
+      background:var(--bg);
+      color:var(--white);
+      font-family:'Dancing Script', 'Inter', Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      max-width:1000px;
+      margin:36px auto;
+      padding:20px;
+      line-height:1.6;
+      font-size:20px;
+    }
+
+    /* Header */
+    header{margin-bottom:28px}
+    h1{
+      margin:0 0 6px;
+      font-family:'Dancing Script', 'Inter', sans-serif;
+      font-weight:700;
+      font-size:44px;
+      letter-spacing:0.5px;
+      color:var(--white);
+    }
+    p.lead{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-family:'Dancing Script', 'Inter', sans-serif;
+      font-size:20px;
+    }
+
+    /* Projects grid */
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin:18px 0;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:14px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:22px;
+      color:var(--white);
+      font-family:'Dancing Script', 'Inter', sans-serif;
+      font-weight:700;
+    }
+    .card p{margin:0 0 10px;color:var(--muted);font-family:'Dancing Script', 'Inter', sans-serif}
+
+    img.project-thumb{
+      width:100%;
+      height:auto;
+      border-radius:8px;
+      display:block;
+      margin:8px 0 12px;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    /* Icons */
+    .contact-row{display:flex;gap:12px;align-items:center;margin-top:8px}
+    .icon{
+      width:48px;
+      height:48px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:var(--accent);
+      color:var(--white);
+      text-decoration:none;
+      transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      box-shadow:0 6px 14px rgba(40,167,69,0.18);
+      flex-shrink:0;
+    }
+    .icon svg{width:22px;height:22px;fill:currentColor}
+    .icon:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(40,167,69,0.22)}
+    .icon:active{transform:translateY(0)}
+    .icon-label{color:var(--muted);font-size:14px;margin-left:8px}
+
+    /* Links */
+    a{color:var(--accent);text-decoration:none;font-weight:600}
+    a:hover{text-decoration:underline}
+
+    /* Footer */
+    footer{margin-top:36px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Responsive tweaks */
+    @media (max-width:520px){
+      body{padding:16px;font-size:18px}
+      h1{font-size:36px}
+      .icon{width:44px;height:44px}
+    }
+  </style>
 </head>
 <body>
-  <h1>Hi — I'm Vicxton</h1>
-  <p>Developer • Projects • Contact</p>
-  <h2>Projects</h2>
-  <ul>
-    <li>File Organizer Script — Python</li>
-    <li>Portfolio Website — HTML/CSS</li>
-  </ul>
-  <h2>Contact</h2>
-  <p>Email: yourname@example.com</p>
+  <header>
+    <h1>VicPortfolio</h1>
+    <p class="lead">Hi — I'm VicPortfolio. I build web projects, share code samples, and solve problems with clean, maintainable code.</p>
+    <p><strong>Site:</strong> <a href="https://vicportfolio.github.io/" target="_blank" rel="noopener">https://vicportfolio.github.io/</a></p>
+  </header>
+
+  <main>
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading" style="font-family:'Inter', 'Dancing Script', sans-serif; font-size:20px; color:var(--white); margin-top:0">Selected Projects</h2>
+      <div class="projects">
+        <article class="card">
+          <h3>Project One</h3>
+          <img class="project-thumb" src="images/project1.png" alt="Screenshot of Project One interface">
+          <p>Short description of Project One — what it does and the main technologies used.</p>
+          <p><a href="projects/project-one.html">View details</a> · <a href="https://github.com/vicportfolio/project-one" target="_blank" rel="noopener">Source</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Project Two</h3>
+          <img class="project-thumb" src="images/project2.png" alt="Screenshot of Project Two interface">
+          <p>Short description of Project Two — highlight a feature or two and the stack.</p>
+          <p><a href="projects/project-two.html">View details</a> · <a href="https://github.com/vicportfolio/project-two" target="_blank" rel="noopener">Source</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="about-heading">
+      <h2 id="about-heading" style="font-family:'Inter', 'Dancing Script', sans-serif; font-size:20px; color:var(--white)">About</h2>
+      <p>I focus on front-end and full-stack web development. I enjoy building small, useful tools and learning new libraries and frameworks.</p>
+    </section>
+
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading" style="font-family:'Inter', 'Dancing Script', sans-serif; font-size:20px; color:var(--white)">Contact</h2>
+      <p>If you want to reach me: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p>Find me on GitHub: <a href="https://github.com/vicportfolio" target="_blank" rel="noopener">github.com/vicportfolio</a></p>
+
+      <div class="contact-row" style="margin-top:12px">
+        <!-- GitHub icon -->
+        <a class="icon" href="https://github.com/vicportfolio" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.93 3.19 9.11 7.61 10.59.56.1.77-.24.77-.54 0-.27-.01-1.16-.02-2.1-3.09.67-3.74-1.49-3.74-1.49-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .17 1.57-.75 1.57-.75.9-1.54 2.36-1.1 2.94-.84.09-.66.35-1.1.64-1.35-2.47-.28-5.07-1.24-5.07-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.4.11-2.92 0 0 .95-.3 3.12 1.15.9-.25 1.86-.38 2.82-.38.96 0 1.92.13 2.82.38 2.17-1.45 3.12-1.15 3.12-1.15.61 1.52.23 2.64.11 2.92.72.78 1.16 1.78 1.16 3 0 4.29-2.61 5.24-5.09 5.51.36.31.68.92.68 1.86 0 1.34-.01 2.42-.01 2.75 0 .3.2.65.78.54 4.42-1.48 7.61-5.66 7.61-10.59C23.25 5.48 18.27.5 12 .5z"/></svg>
+        </a>
+
+        <!-- Email icon -->
+        <a class="icon" href="mailto:your-email@example.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+
+        <!-- External / website icon -->
+        <a class="icon" href="https://vicportfolio.github.io" target="_blank" rel="noopener" aria-label="Open site">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59L10 12.59 11.41 14 19 6.41V10h2V3h-7zM5 5h6V3H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+        </a>
+
+        <span class="icon-label">Quick links</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> VicPortfolio. Built with GitHub Pages.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>
+
